@@ -43,4 +43,3 @@ class PandasOperator(BaseOperator):
             logging.info("DataFrame shape after transformation %s", df.shape)
 
         self._output_callable(df, **self._output_callable_kwargs)
-

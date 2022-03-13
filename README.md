@@ -1,7 +1,7 @@
 # From Data Pipelines with Airflow book
-## Package for chapter 14 nyc transport 
+## Package for chapter 14 nyc transport
 
-This is a Github repo for the package from chapter 14 of 
+This is a Github repo for the package from chapter 14 of
 the book Data Pipelines with Apache Airflow from Manning.
 
 The repo with all of the chapters is [here](https://github.com/mrn-aglic/datapipelines-airflow-book).

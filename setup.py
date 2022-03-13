@@ -8,7 +8,7 @@ setuptools.setup(
     name="nyctransport",
     version="0.1.0",
     description="Operators for the NYC transportation example (chapter 14) in Data Pipelines with apache airflow book "
-                "(manning).",
+    "(manning).",
     author="Anonymous",
     author_email="anonymous@example.com",
     install_requires=requirements,
