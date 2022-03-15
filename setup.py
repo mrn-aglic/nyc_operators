@@ -6,7 +6,7 @@ requirements = ["apache-airflow"]
 
 setuptools.setup(
     name="nyctransport",
-    version="0.1.0",
+    version="0.1.1",
     description="Operators for the NYC transportation example (chapter 14) in Data Pipelines with apache airflow book "
     "(manning).",
     author="Anonymous",
