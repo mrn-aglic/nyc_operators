@@ -10,7 +10,7 @@ from sqlalchemy import create_engine
 
 # pylint: disable=too-many-instance-attributes
 class MinioPandasToPostgresOperator(BaseOperator):
-    template_fields = ("minio_key",)
+    template_fields = ("_minio_key",)
     ui_color = "#705B74"
     ui_fgcolor = "#8FA48B"
 
@@ -64,12 +64,12 @@ class MinioPandasToPostgresOperator(BaseOperator):
 
         logging.info("Read DataFrame with shape: %s.", df.shape)
 
-        engine = create_engine(BaseHook.get_connection(conn_id=self._postgres_conn_id))
+        engine = create_engine(BaseHook.get_connection(conn_id=self._postgres_conn_id).get_uri())
 
         with engine.begin() as conn:
             conn.execute(
                 f"DELETE FROM {self._postgres_table} WHERE airflow_execution_date = '{execution_date}'"
             )
-            df.to_sql(self._postgres_table, conn=conn, index=False, if_exists="append")
+            df.to_sql(self._postgres_table, con=conn, index=False, if_exists="append")
 
         logging.info("Wrote DataFrame to %s.", self._postgres_table)
